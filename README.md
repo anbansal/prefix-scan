@@ -6,7 +6,9 @@ There are two folders in this project.
 - part-I
 - part-II
 
-part-I implements the serial version of the prefix scan. part-II implements the GPU CUDA version of the prefix scan scan.
+part-I implements the serial version of the prefix scan.
+
+part-II implements the GPU CUDA version of the prefix scan scan.
 
 To run the program, please do the following steps.
 
@@ -25,6 +27,7 @@ To run the program, please do the following steps.
 - For the part-II
 
   Do the similar steps for creating executable in part-II
+
     Type the following commands while being in the prefix-scan directory!
 
      ```
@@ -35,7 +38,9 @@ To run the program, please do the following steps.
   # make
   ```
 
-The make command will generate `prefixScan` executable file in the build folder of the corresponding part. To run the executable type, please type on your command line following and it will run the test cases.
+The make command will generate `prefixScan` executable file in the build folder of the corresponding part.
+
+To run the executable type, please type on your command line following and it will run the test cases.
 >`# ./prefixScan`
 
 
@@ -51,9 +56,7 @@ Both of the parts create the test cases to test whether the algorithm works or n
 
 For the algorithm to work correctly, it should take an array or vector of input integers and produce the output vector which is same as the output of `exclusive_scan` function, described above and the last element of the algorithm output should be equal to the return value of `sumExclusive` function, described above.
 
-Both of the parts, run the algorithm for `100`cases and output whether the test is passed or failed and the time taken by the machine (in milliseconds) to do the computation. The part-II code also prints out the speed up achieved by using GPUs.
-
-Every test case has a different size of random input integers. The size of the input array is also randomly generated. Out of 100 cases, the code has some cases where the size is taken as multiple of 2 as `2^i, where i = 1 to 25` to make sure that code tests cases which are a perfect size for GPU allowed memory.
+Both of the parts, run the algorithm for `100`cases and output whether the test is passed or failed and the time taken by the machine (in milliseconds) to do the computation. The part-II code also prints out the speed up achieved by using GPUs. Every test case has a different size of random input integers. The size of the input array is also randomly generated. Out of 100 cases, the code has some cases where the size is taken as multiple of 2 as `2^i, where i = 1 to 25` to make sure that code tests cases which are a perfect size for GPU allowed memory.
 
 ## part-I
 This is the sequential version of the prefix scan. The algorithm takes an array or vector of integers and does the prefix scan, according to the function in `Assignment::run()` which is defined in file `/prefix-scan/part-I/src/exclusiveScan.cpp` and then return the time taken  to do the computation.

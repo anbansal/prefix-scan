@@ -216,11 +216,11 @@ This part implements the GPU version of the prefix scan. The code uses the algor
 
  - Reduction step: Where the sums are calculated on the binary tree level
 
-    ![alt text](ReductionStep.png)
+    ![alt text](images/ReductionStep.png)
     Source: https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch39.html
  - Down-Sweep step: where the sums are saved on the binary tree level
 
-     ![alt text](DownSweepStep.png)
+     ![alt text](images/DownSweepStep.png)
      Source: https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch39.html
 
 The GPU code follows the following path:
@@ -234,7 +234,7 @@ The GPU code follows the following path:
   7. If the number of elements is bigger than the maximum elements per block then it calls a method `void gpuData::scanLargerBlockSize()`. This function divides the input array into two parts.
         - First part is perfect multiple of elements per blocks and is processed by `void gpuData::scanPerfectBlockSize()` which calls cuda kernel function` exclusiveScanGPU<<< >>>` with more than one block and passes a temporary variable to collect the sums of different blocks. It stores the prefix scan of every block in the main output array and also stores the blocks' sums in the temporary temporary variable. Then it also scan those sums and add them in the main output array in the function `appendData<<<  >>>`.
 
-        ![alt text](BlocksSums.png)
+        ![alt text](images/BlocksSums.png)
         Source: https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch39.html
 
         - The second part is the remainder of the input array and it runs a `void gpuData::scanSmallerBlockSize()` function on this remainder part.

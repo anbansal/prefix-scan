@@ -11,7 +11,8 @@ part-I implements the serial version of the prefix scan. part-II implements the 
 To run the program, please do the following steps.
 
 - For the part-I
-Type the following commands while being in the prefix-scan directory!
+
+  Type the following commands while being in the prefix-scan directory!
 
   ```
   # cd part-I
@@ -22,7 +23,8 @@ Type the following commands while being in the prefix-scan directory!
   ```
 
 - For the part-II
-Do the similar steps for creating executable in part-II
+
+  Do the similar steps for creating executable in part-II
     Type the following commands while being in the prefix-scan directory!
 
      ```
